@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private api:ApiService){
     this.getGames();
-    this.selectedGame = {id: 0, name_player_1: '', name_player_2: '', move_player_1: '', move_player_2: '', winner: ''};
+    this.selectedGame = {id: 0, name_player_1: '', name_player_2: '', move_player_1: '', move_player_2: '', winner: '1'};
   }
   getGames = () =>{
     this.api.getAllGames().subscribe(
