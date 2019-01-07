@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../httprequests/httprequests.service';
+import { DataService } from '../data/data.service';
 
 @Component({
   selector: 'app-init-root',
   templateUrl: './initgame.component.html',
   styleUrls: ['./initgame.component.css'],
-  providers: [ApiService]
+  providers: [ApiService, DataService]
 })
 export class InitComponent {
 
@@ -14,11 +15,14 @@ export class InitComponent {
   game_id;
   response;
 
-  constructor(private api:ApiService){
+  constructor(private api:ApiService, private data: DataService){
 
     this.playerone = "";
     this.playertwo = "";
-    this.game_id = 0;
+    // this.game_id = 0;
+    this.data.currentGameId.subscribe(id_ => this.game_id = id_);
+    this.data.currentPlayerOne.subscribe(name => this.playerone = name);
+    console.log(this.game_id);
 
   }
 
@@ -31,6 +35,7 @@ export class InitComponent {
       console.log(error);
     }
   );
+    this.data.setPlayerOne(this.playerone);
   }
 
   updateinit = () => {
