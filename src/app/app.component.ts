@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from './api.service';
+import { ApiService } from './httprequests/httprequests.service';
 import { shiftInitState } from '@angular/core/src/view';
 
 @Component({

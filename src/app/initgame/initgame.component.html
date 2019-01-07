@@ -1,0 +1,12 @@
+
+<div class="container">
+<div>
+  <h1>Init Game</h1>
+  Player 1 <input type="text"  [(ngModel)]="playerone">
+  Player 2 <input type="text"  [(ngModel)]="playertwo">
+</div>
+  <div>
+    <button (click)="set_init_game()" [routerLink]="['/round1']">Start</button>
+  </div>
+</div>
+

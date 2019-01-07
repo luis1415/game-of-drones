@@ -1,39 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 style="color:darkcyan">
-    Game of Drones
-  </h1>
-</div>
-<h2 style="color:darkcyan" >Resultados </h2>
-
-<ul>
-  <li *ngFor="let game of games">
-    <h3 (click)="GameClicked(game)">Ganador: {{ game.winner }}</h3>
-  </li>
-</ul>
-
-<hr>
 
 <h3 style="color:darkcyan">Piedra - papel - tijera: </h3>
 
-Juego número: <input type="number" [(ngModel)] = "selectedGame.id"/> <br>
-Nombre Jugador 1: <input type="text" [(ngModel)] = "selectedGame.name_player_1"/> <br>
-Nombre Jugador 2: <input type="text" [(ngModel)] = "selectedGame.name_player_2"/> <br>
 
-Movimiento Jugador 1:
+<div class="container">
+  <ul class="list-inline">
+    <li><a href="#" routerLink="/initgame" routerLinkActive="active">Init</a></li>
+    <li><a href="#" routerLink="/round1" routerLinkActive="active">Round 1</a></li>
+  </ul>
+</div>
 
-<select name="move_player_1" id="singleSelect" [(ngModel)] = "selectedGame.move_player_1">
-  <option value="r">Piedra</option>
-  <option value="p">Papel</option>
-  <option value="s">Tijera</option>
-</select> <br>
+<!--<nav>-->
+  <!--<a routerLink="/initgame" routerLinkActive="active">Init</a>-->
 
-Movimiento Jugador 2: 
-<select name="move_player_2" id="singleSelect" [(ngModel)] = "selectedGame.move_player_2">
-  <option value="r">Piedra</option>
-  <option value="p">Papel</option>
-  <option value="s">Tijera</option>
-</select> <br>
-
-<button (click)="updateGame()">Actualizar</button>
-<button (click)="createGame()">Guardar</button>
+  <!--<a routerLink="/round1" routerLinkActive="active">Round1</a>-->
+<!--</nav>-->
+<router-outlet></router-outlet>
