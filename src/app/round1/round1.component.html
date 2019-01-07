@@ -1,1 +1,29 @@
-<h1>Round 1</h1>
+
+<div class="container">
+    <div>
+    <h1>Round 1</h1>
+
+    <hr>
+
+    <h3 style="color:darkcyan">Piedra - papel - tijera: </h3>
+
+    Nombre Jugador 1: <input type="text" [(ngModel)] = "name_player_1"/> <br>
+    Nombre Jugador 2: <input type="text" [(ngModel)] = "name_player_2"/> <br>
+
+    Movimiento Jugador 1:
+
+    <select name="move_player_1" id="singleSelect" [(ngModel)] = "move_player_1">
+    <option value="r">Piedra</option>
+    <option value="p">Papel</option>
+    <option value="s">Tijera</option>
+    </select> <br>
+
+    Movimiento Jugador 2: 
+    <select name="move_player_2" id="singleSelect" [(ngModel)] = "move_player_2">
+    <option value="r">Piedra</option>
+    <option value="p">Papel</option>
+    <option value="s">Tijera</option>
+    </select> <br>
+
+    <button (click)="createGame()" [routerLink]="['/round1']">Guardar</button>    
+    
